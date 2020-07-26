@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-block">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <tr id="widthTabla">
+          <th>dato_1</th>
+          <th>dato_2</th>
+          <th>dato_3</th>
+          <th>dato_4</th>
+        </tr>
+        <tr *ngFor="let res of liResultados | paginate: { itemsPerPage: 30, currentPage: pageNumber }">
+          <td>{{res.dato_1}}</td>
+          <td>{{res.dato_2}}</td>
+          <td>{{res.dato_3}}</td>
+          <td>{{res.dato_4}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="float-sm-right float-md-right float-lg-right float-xl-right" style="margin-top: 20px;">
+      <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
+    </div>
+  </div>
+</div>
